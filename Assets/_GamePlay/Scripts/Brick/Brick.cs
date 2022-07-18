@@ -66,7 +66,7 @@ public class Brick : MonoBehaviour
         if (other.CompareTag("Player") && LevelManager.Ins.CheckFlag(brickFlag))
         {
             //Debug.Log(brickFlag);
-
+            LevelManager.Ins.Player.AddBrick();
             Destroy(gameObject);
             //TODO: pooling
         }

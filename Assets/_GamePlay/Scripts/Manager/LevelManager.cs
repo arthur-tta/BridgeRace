@@ -42,7 +42,7 @@ public class LevelManager : Singleton<LevelManager>
             return true;
         }
         else {
-            return value == Player.playerFlag;
+            return value == Player.brickOfPlayer.playerFlag;
         }
     }
     

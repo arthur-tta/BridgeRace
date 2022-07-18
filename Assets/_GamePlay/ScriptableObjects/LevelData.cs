@@ -29,7 +29,7 @@ public class LevelData : ScriptableObject
         {
             for (int k = 0; k < brickAmount / 8; k++)
             {
-                dataLocationOFBrick[idex] = new Vector3(j * 2 + 1, 1, k * 2 - 6);
+                dataLocationOFBrick[idex] = new Vector3(j * 2 + 1, 0.2f, k * 2 - 6);
                 idex++;
             }
         }
