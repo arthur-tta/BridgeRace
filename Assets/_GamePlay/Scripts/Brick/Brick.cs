@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-
     public enum Flag { red, yellow, blue, violet, gray}
-    private Flag flag;
+    public Flag flag;
     public int brickFlag;
 
 

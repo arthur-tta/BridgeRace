@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BrickOfPlayer : MonoBehaviour
+
 {
+    
     public Brick prefabBrick;
-    public int brickAmount = 10;
+    public int brickAmount = 0;
     public int playerFlag = 3;
 
+    
     public void AddBrick()
     {
         brickAmount++;
@@ -15,4 +18,5 @@ public class BrickOfPlayer : MonoBehaviour
         prefabBrick.transform.localPosition = transform.localPosition + new Vector3(0, 0.2f * brickAmount, -1);
         prefabBrick.SetFlag(playerFlag);
     }
+    
 }

@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0ac376a6d4c6742a118a3aacb8c844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flag: 2
   brickFlag: 3
   materials:
   - {fileID: 2100000, guid: 24bc3b58f7d83eb49a0c0d708e4e6835, type: 2}

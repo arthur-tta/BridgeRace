@@ -7,33 +7,41 @@ public class Player : MonoBehaviour
     public float speed = 10f;
     public Joystick joystick;
     public Rigidbody rigidbody;
-    public BrickOfPlayer brickOfPlayer;
 
-    public float velocityY;
+
+    public BrickOfPlayer brickOfPlayer;
+    public Animator playerAnimator;
+    public bool isRun = false;
+    
+    
+
+
 
    
-    private void Update()
+
+    private void FixedUpdate()
     {
-        rigidbody.velocity = new Vector3(joystick.Horizontal * speed,
-                                         velocityY,
-                                         joystick.Vertical * speed);
-        velocityY = -1;
+
+        rigidbody.velocity = new Vector3(joystick.Horizontal * speed, 0, joystick.Vertical * speed);
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            rigidbody.rotation = Quaternion.LookRotation(rigidbody.velocity);
+            playerAnimator.SetBool("isRun", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("isRun", false);
+        }
     }
 
-
+    
     public void AddBrick()
     {
         brickOfPlayer.AddBrick();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Bridge" && brickOfPlayer.brickAmount > 0)
-        {
-            transform.position = transform.position + new Vector3(0, 0.1f, 0.3f);
-            brickOfPlayer.brickAmount--;
-        }
-    }
+    
+   
 
 
 }
